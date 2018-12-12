@@ -565,7 +565,7 @@ def configure_cluster_global():
 
     pcmk.commit(cmd)
     cmd = ('crm configure rsc_defaults $id="rsc-options" '
-           'resource-stickiness="100"')
+           'resource-stickiness="100" failure-timeout=3m')
     pcmk.commit(cmd)
 
     log('Configuring cluster-recheck-interval to 60 seconds', level=DEBUG)
